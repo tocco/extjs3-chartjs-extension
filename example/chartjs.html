@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ext.ux.Chartjs</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/ext-all.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/adapter/ext/ext-base.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/ext-all.js"></script>
+  <script type="text/javascript" src="../lib/Chart.min.js"></script>
+  <script type="text/javascript" src="../src/Ext.ux.Chartjs.js"></script>
+  <style>
+  #container .x-panel {
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+
+<script type="text/javascript">
+  Ext.onReady(function() {
+        var container = new Ext.Container({
+            items: [
+                new Ext.Panel({
+                    title: "Example Chart.js",
+                    height: 320,
+                    width: 600,
+                    layout: "fit",
+                    canResize: true,
+                    heightIncrement: 5,
+                    items: [
+                        new Ext.ux.Chartjs({
+                            type: "Line",
+                            data: {
+                                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                                datasets: [
+                                    {
+                                        label: "My First dataset",
+                                        fillColor: "rgba(220,220,220,0.2)",
+                                        strokeColor: "rgba(220,220,220,1)",
+                                        pointColor: "rgba(220,220,220,1)",
+                                        pointStrokeColor: "#fff",
+                                        pointHighlightFill: "#fff",
+                                        pointHighlightStroke: "rgba(220,220,220,1)",
+                                        data: [65, 59, 80, 81, 56, 55, 40]
+                                    },
+                                    {
+                                        label: "My Second dataset",
+                                        fillColor: "rgba(151,187,205,0.2)",
+                                        strokeColor: "rgba(151,187,205,1)",
+                                        pointColor: "rgba(151,187,205,1)",
+                                        pointStrokeColor: "#fff",
+                                        pointHighlightFill: "#fff",
+                                        pointHighlightStroke: "rgba(151,187,205,1)",
+                                        data: [28, 48, 40, 19, 86, 27, 90]
+                                    }
+                                ]
+                            }
+                        })
+                    ]
+                }),
+                new Ext.Panel({
+                    title: "Example Chart.js",
+                    height: 320,
+                    width: 600,
+                    layout: "fit",
+                    items: [
+                        new Ext.ux.Chartjs({
+                            type: "Bar",
+                            data: {
+                                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                                datasets: [
+                                    {
+                                        label: "My First dataset",
+                                        fillColor: "rgba(220,220,220,0.5)",
+                                        strokeColor: "rgba(220,220,220,0.8)",
+                                        highlightFill: "rgba(220,220,220,0.75)",
+                                        highlightStroke: "rgba(220,220,220,1)",
+                                        data: [65, 59, 80, 81, 56, 55, 40]
+                                    },
+                                    {
+                                        label: "My Second dataset",
+                                        fillColor: "rgba(151,187,205,0.5)",
+                                        strokeColor: "rgba(151,187,205,0.8)",
+                                        highlightFill: "rgba(151,187,205,0.75)",
+                                        highlightStroke: "rgba(151,187,205,1)",
+                                        data: [28, 48, 40, 19, 86, 27, 90]
+                                    }
+                                ]
+                            }
+                        })
+                    ]
+                }),
+                new Ext.Panel({
+                    title: "Example Chart.js",
+                    height: 320,
+                    width: 600,
+                    layout: "fit",
+                    items: [
+                        new Ext.ux.Chartjs({
+                            type: "Doughnut",
+                            data: [
+                                {
+                                    value: 300,
+                                    color:"#F7464A",
+                                    highlight: "#FF5A5E",
+                                    label: "Red"
+                                },
+                                {
+                                    value: 50,
+                                    color: "#46BFBD",
+                                    highlight: "#5AD3D1",
+                                    label: "Green"
+                                },
+                                {
+                                    value: 100,
+                                    color: "#FDB45C",
+                                    highlight: "#FFC870",
+                                    label: "Yellow"
+                                }
+                            ]
+                        })
+                    ]
+                })
+            ],
+            renderTo: "container"
+        });
+  });
+</script>
+
+<div id="container"></div>
+
+</body>
+
+</html>
